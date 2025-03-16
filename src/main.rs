@@ -95,3 +95,21 @@ fn ownership_fn() {
 
     println!("name in ownership_fn after pass data to hello_world function: {}", name);
 }
+
+fn full_name(first_name: String, last_name: String) -> (String, String) {
+    println!("first_name in function full_name accesed: {}", first_name);
+    println!("last_name in function full_name accesed: {}", last_name);
+    return (first_name, last_name);
+}
+
+#[test]
+// di bawah ini adalah cara mengembalikan ownership tanpa harus clone()
+fn test_full_name() {
+    let first_name = String::from("Reza Khoirul");
+    let last_name = String::from("Wijaya Putra");
+
+    let (first_name, last_name) = full_name(first_name, last_name);
+
+    println!("first_name accesed in test_full_name: {}", first_name);
+    println!("last_name accesed in test_full_name: {}", last_name);
+}
