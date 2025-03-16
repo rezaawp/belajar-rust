@@ -48,3 +48,18 @@ fn test_data_type() {
 
     println!("lists {:?}", lists); 
 }
+
+#[test]
+fn string() {
+    let name: &str = "   Reza Khoirul Wijaya Putra    "; // ini akan terus ada di memory karna string slice bersifat fixed dan tidak akan bisa berubah
+    println!("Name: {}", name); 
+    let trim: &str = name.trim(); // ini akan menyimpan di stack memory baru
+    println!("Name trim: {}", trim);
+
+    let mut first_name = "Reza"; // ini akan ada terus di memory
+    println!("First Name: {}", first_name);
+
+    first_name = "Reza Khoirul"; // ini akan membuat data baru di memory stack tapi dengan catatan, value sebelumnya tidak akan hilang di memory
+
+    println!("First Name: {}", first_name);
+}
