@@ -74,3 +74,11 @@ fn ownership_movement() {
 
     println!("Name: {}", name2);
 }
+
+#[test]
+fn clone() {
+    let name1: String = String::from("Reza Khoirul Wijaya Putra");
+
+    let name2: String = name1.clone();
+    println!("name1: {}, name2: {}", name1, name2);
+}
