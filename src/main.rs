@@ -82,3 +82,16 @@ fn clone() {
     let name2: String = name1.clone();
     println!("name1: {}, name2: {}", name1, name2);
 }
+
+fn hello_world(name: String) {
+    println!("name: {}", name);
+}
+
+#[test]
+fn ownership_fn() {
+    let name = String::from("Reza Khoirul Wijaya Putra");
+
+    hello_world(name.clone()); // disini kalau gapakai clone, variable name sudah berpindah ownership nya ke parameter function hello_world yang menyebabkan variable yang disimpan di head tidak bisa di akses lagi setelah pemanggilan function ini
+
+    println!("name in ownership_fn after pass data to hello_world function: {}", name);
+}
