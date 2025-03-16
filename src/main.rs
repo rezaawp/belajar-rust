@@ -21,3 +21,14 @@ fn test_var_mutable() {
     name = "Abdul";
     println!("Hello {}", name);
 }
+
+#[test]
+fn test_static_typing() {
+    // tipe data akan di deklarasikan di awal
+
+    // contoh error (tidak sesuai tipe data)
+    // let mut name = "Reza";
+    // name = 10;
+
+    
+}
