@@ -104,6 +104,7 @@ fn full_name(first_name: String, last_name: String) -> (String, String) {
 
 #[test]
 // di bawah ini adalah cara mengembalikan ownership tanpa harus clone()
+// di bawah ini adalah cara yang menyulitkan. karena rust sudah memiliki fitur Reference
 fn test_full_name() {
     let first_name = String::from("Reza Khoirul");
     let last_name = String::from("Wijaya Putra");
