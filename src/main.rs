@@ -63,3 +63,14 @@ fn string() {
 
     println!("First Name: {}", first_name);
 }
+
+#[test]
+fn ownership_movement() {
+    let name1: String = String::from("Reza Khoirul Wijaya Putra");
+
+    let name2: String = name1;
+    // println!("name1: {}, name2: {}", name1, name2); // name1 sudah gabisa lagi di akses disini karena sudah ada perpindahan ownersip dari name1 ke name2
+    // perpindahan ownership akan terjadi jika yang disimpan di dalam heap
+
+    println!("Name: {}", name2);
+}
