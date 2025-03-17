@@ -139,6 +139,13 @@ fn change_value_preferences(full_name: &mut String) {
 
 #[test]
 fn test_change_preferences() {
+    // mutable preferences tidak boleh dilakukan jika ada mutable prefrences yang sama di dalam 1 waktu yang sudah keluar dari konsep alur hidup rust
+    // contoh salah:
+    // let mut_ful_name1 = &mut full_name;
+    // let mut_ful_name2 = &mut full_name;
+    // change_value_preferences(&mut mut_ful_name1);
+    // change_value_preferences(&mut mut_ful_name2);
+
     let mut full_name = String::from("Reza");
 
     change_value_preferences(&mut full_name);
