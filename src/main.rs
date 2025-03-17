@@ -132,3 +132,16 @@ fn test_preferences() {
     println!("last_name accesed in test_full_name: {}", last_name);
     println!("fullname result: {}", fullname);
 }
+
+fn change_value_preferences(full_name: &mut String) {
+    full_name.push_str(" Khoirul");
+}
+
+#[test]
+fn test_change_preferences() {
+    let mut full_name = String::from("Reza");
+
+    change_value_preferences(&mut full_name);
+
+    println!("full_name: {}", full_name);
+}
