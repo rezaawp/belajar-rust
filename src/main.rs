@@ -114,3 +114,21 @@ fn test_full_name() {
     println!("first_name accesed in test_full_name: {}", first_name);
     println!("last_name accesed in test_full_name: {}", last_name);
 }
+
+fn full_name_references(first_name: &String, last_name: &String) -> String {
+    return format!("{} {}", first_name, last_name);
+}
+
+#[test]
+// di bawah ini adalah cara mengembalikan ownership tanpa harus clone()
+// di bawah ini adalah cara yang menyulitkan. karena rust sudah memiliki fitur Reference
+fn test_preferences() {
+    let first_name = String::from("Reza Khoirul");
+    let last_name = String::from("Wijaya Putra");
+
+    let fullname = full_name_references(&first_name, &last_name);
+
+    println!("first_name accesed in test_full_name: {}", first_name);
+    println!("last_name accesed in test_full_name: {}", last_name);
+    println!("fullname result: {}", fullname);
+}
